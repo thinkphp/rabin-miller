@@ -22,3 +22,20 @@
   
      The Running Time: O(k log 3 n)
 
+###  Algorithm
+### 
+###  Input: A number N to be tested and a variable that determines the accuracy of the test.
+
+###  Output: 0 if N is definitely composite or 1 if N is probably a prime.
+###
+###  Write N as 2^s*d
+###  For each iteration
+###        Pick a random witness in [2,N-2]
+###        q = witness^d mod N
+###        if q == 1 || q == N-1 got to nextIteration
+###         for each i=1,s-1
+###            q = q^2 mod N
+###             if q == 1 return composite
+###            if q == N-1 return nextIteration      
+###         return composite
+###  return probably prime                      
